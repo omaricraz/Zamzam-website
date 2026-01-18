@@ -1,4 +1,5 @@
 import React from 'react'
+import { useDarkMode } from '../contexts/DarkModeContext'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules'
 import 'swiper/css'
@@ -6,6 +7,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
 
 const Hero = () => {
+  const { isDarkMode } = useDarkMode()
   const heroImages = [
     { src: '/images/litgirlchips.jpg', alt: 'Chips' },
     { src: '/images/complshot.jpeg', alt: 'Complete SHot' },
@@ -30,7 +32,9 @@ const Hero = () => {
       id="home"
       className="relative pt-24 md:pt-32 pb-20 md:pb-32 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #EDE8F5 0%, #FFFFFF 50%, #FDF4E3 100%)',
+        background: isDarkMode 
+          ? 'linear-gradient(135deg, #1F2937 0%, #111827 50%, #0F172A 100%)'
+          : 'linear-gradient(135deg, #EDE8F5 0%, #FFFFFF 50%, #FDF4E3 100%)',
       }}
     >
       {/* Grid Pattern Overlay */}
@@ -49,22 +53,22 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 mt-8 md:mt-10">
-        <div className="inline-block bg-brand-gold text-brand-dark px-4 md:px-6 py-2 rounded-full font-bold text-xs md:text-sm mb-6 shadow-lg">
+        <div className="inline-block bg-brand-green text-white px-4 md:px-6 py-2 rounded-full font-bold text-xs md:text-sm mb-6 shadow-lg">
           ESTABLISHED 2003
         </div>
 
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl font-medium text-brand-dark mb-4 md:mb-6 leading-tight px-2">
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl font-medium text-brand-dark dark:text-white mb-4 md:mb-6 leading-tight px-2">
           Affordable Quality <br className="hidden sm:block" /> for Everyday Life
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed px-4">
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed px-4">
           Established in 2003 in Hargeisa, Somaliland, ZamZam Food Industry produces quality instant drink powders and snacks through local manufacturing, delivering affordable products across Somaliland.
         </p>
 
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 md:gap-4 mb-12 md:mb-16 px-4">
           <button
             onClick={() => scrollToSection('products')}
-            className="bg-brand-dark text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base hover:bg-brand-red hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            className="bg-brand-dark text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base hover:bg-brand-green hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
           >
             <i className="fas fa-chart-line mr-2"></i> View Product Portfolio
           </button>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { DarkModeProvider } from './contexts/DarkModeContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -11,17 +12,19 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="text-gray-800 bg-white">
-      <Header />
-      <Hero />
-      <About />
-      <Products />
-      <Manufacturing />
-      <Features />
-      <Distribution />
-      <Contact />
-      <Footer />
-    </div>
+    <DarkModeProvider>
+      <div className="text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <Header />
+        <Hero />
+        <About />
+        <Products />
+        <Manufacturing />
+        <Features />
+        <Distribution />
+        <Contact />
+        <Footer />
+      </div>
+    </DarkModeProvider>
   )
 }
 

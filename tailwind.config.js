@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,8 +9,9 @@ export default {
     extend: {
       colors: {
         brand: {
-          blue: '#0A2463',
-          red: '#FF5252',
+          blue: '#0100ca',
+          red: '#ca0100',
+          green: '#61c250',
           gold: '#FFC145',
           dark: '#1E1E24',
           light: '#F8F9FA',
@@ -20,7 +22,7 @@ export default {
         serif: ['Playfair Display', 'serif'],
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(255, 82, 82, 0.5)',
+        'glow': '0 0 20px rgba(202, 1, 0, 0.5)',
       }
     },
   },

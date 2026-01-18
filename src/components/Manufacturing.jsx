@@ -41,11 +41,11 @@ const Manufacturing = () => {
   ]
 
   return (
-    <section id="manufacturing" className="py-12 md:py-24 bg-white">
+    <section id="manufacturing" className="py-12 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
           <span className="text-brand-red font-bold tracking-widest uppercase text-xs md:text-sm">Our Process</span>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue mt-2 md:mt-3 mb-4 md:mb-6 px-4">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue dark:text-brand-green mt-2 md:mt-3 mb-4 md:mb-6 px-4">
             Quality Manufacturing Process
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-base md:text-lg">
@@ -57,13 +57,13 @@ const Manufacturing = () => {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="bg-white border-2 border-gray-100 rounded-2xl p-6 md:p-8 hover:border-brand-red hover:shadow-xl transition-all duration-300 relative"
+              className="bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-2xl p-6 md:p-8 hover:border-brand-red hover:shadow-xl transition-all duration-300 relative"
             >
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-brand-blue dark:bg-brand-green text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
                 {step.number}
               </div>
-              <h3 className="text-xl font-bold text-brand-blue mb-4 mt-4">{step.title}</h3>
-              <p className="text-gray-600 leading-relaxed text-sm md:text-base">{step.description}</p>
+              <h3 className="text-xl font-bold text-brand-blue dark:text-brand-green mb-4 mt-4">{step.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">{step.description}</p>
             </div>
           ))}
         </div>

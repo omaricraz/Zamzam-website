@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { useDarkMode } from '../contexts/DarkModeContext'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { isDarkMode, toggleDarkMode } = useDarkMode()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,13 +54,13 @@ const Header = () => {
               className="flex items-center gap-2 md:gap-3 group"
             >
               <img
-                src="/images/logo.png"
+                src="/images/zamzam-logo.png"
                 alt="ZamZam Group Logo"
                 className="h-8 md:h-12 w-auto group-hover:scale-110 transition-transform duration-300"
               />
               <div className="flex flex-col">
                 <span className="font-serif text-lg md:text-2xl font-bold text-brand-red tracking-tight leading-none">
-                  Zam Zam<span className="text-brand-blue"> Group</span>
+                  Zam Zam<span className="text-brand-blue dark:text-brand-green"> Group</span>
                 </span>
                 <span className="text-[0.5rem] md:text-[0.65rem] font-bold tracking-widest text-black-500 duration-300 -mt-1 hidden sm:block">
                   𝗙𝗢𝗢𝗗 𝗜𝗡𝗗𝗨𝗦𝗧𝗥𝗬
@@ -75,7 +77,7 @@ const Header = () => {
                       e.preventDefault()
                       scrollToSection('home')
                     }}
-                    className="text-gray-700 font-medium hover:text-brand-blue transition-colors relative group"
+                    className="text-gray-700 dark:text-gray-300 font-medium hover:text-brand-blue dark:hover:text-brand-green transition-colors relative group"
                   >
                     Home
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
@@ -88,7 +90,7 @@ const Header = () => {
                       e.preventDefault()
                       scrollToSection('about')
                     }}
-                    className="text-gray-700 font-medium hover:text-brand-blue transition-colors relative group"
+                    className="text-gray-700 dark:text-gray-300 font-medium hover:text-brand-blue dark:hover:text-brand-green transition-colors relative group"
                   >
                     About
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
@@ -101,7 +103,7 @@ const Header = () => {
                       e.preventDefault()
                       scrollToSection('products')
                     }}
-                    className="text-gray-700 font-medium hover:text-brand-blue transition-colors relative group"
+                    className="text-gray-700 dark:text-gray-300 font-medium hover:text-brand-blue dark:hover:text-brand-green transition-colors relative group"
                   >
                     Products
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
@@ -114,7 +116,7 @@ const Header = () => {
                       e.preventDefault()
                       scrollToSection('manufacturing')
                     }}
-                    className="text-gray-700 font-medium hover:text-brand-blue transition-colors relative group"
+                    className="text-gray-700 dark:text-gray-300 font-medium hover:text-brand-blue dark:hover:text-brand-green transition-colors relative group"
                   >
                     Process
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full"></span>
@@ -124,13 +126,25 @@ const Header = () => {
             </nav>
 
             <div className="flex items-center gap-4">
+              <button
+                onClick={toggleDarkMode}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none"
+                aria-label="Toggle dark mode"
+              >
+                {isDarkMode ? (
+                  <i className="fas fa-sun text-lg"></i>
+                ) : (
+                  <i className="fas fa-moon text-lg"></i>
+                )}
+              </button>
+              
               <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault()
                   scrollToSection('contact')
                 }}
-                className="hidden md:inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-brand-red hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5"
+                className="hidden md:inline-flex items-center gap-2 bg-brand-blue dark:bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-brand-green dark:hover:bg-brand-green/90 hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 <span>Partner With Us</span>
                 <i className="fas fa-arrow-right text-xs"></i>
@@ -138,7 +152,7 @@ const Header = () => {
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden text-brand-blue text-2xl focus:outline-none"
+                className="lg:hidden text-brand-blue dark:text-brand-green text-2xl focus:outline-none"
               >
                 {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
               </button>
@@ -149,7 +163,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-brand-blue/95 backdrop-blur-xl z-[60] transform transition-transform duration-500 flex flex-col justify-center items-center ${
+        className={`fixed inset-0 bg-brand-blue dark:bg-brand-green backdrop-blur-xl z-[60] transform transition-transform duration-500 flex flex-col justify-center items-center ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -212,14 +226,27 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="mt-12">
+        <div className="mt-12 flex flex-col items-center gap-4">
+          <button
+            onClick={() => {
+              toggleDarkMode()
+            }}
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors focus:outline-none"
+            aria-label="Toggle dark mode"
+          >
+            {isDarkMode ? (
+              <i className="fas fa-sun text-xl"></i>
+            ) : (
+              <i className="fas fa-moon text-xl"></i>
+            )}
+          </button>
           <a
             href="#distribution"
             onClick={(e) => {
               e.preventDefault()
               scrollToSection('distribution')
             }}
-            className="bg-white text-brand-blue px-8 py-3 rounded-full font-bold text-lg hover:bg-brand-red hover:text-white transition-colors shadow-lg"
+            className="bg-white dark:bg-gray-800 text-brand-blue dark:text-brand-green px-8 py-3 rounded-full font-bold text-lg hover:bg-brand-green dark:hover:bg-brand-green/90 hover:text-white transition-colors shadow-lg"
           >
             Get in Touch
           </a>

@@ -36,8 +36,8 @@ const Products = () => {
       image: '/images/mango.png',
       price: '$4.99',
       badge: 'Premium',
-      badgeColor: 'from-brand-blue to-blue-700',
-      borderColor: 'from-brand-blue via-blue-600',
+      badgeColor: 'from-brand-blue dark:from-brand-green to-blue-700 dark:to-brand-green/80',
+      borderColor: 'from-brand-blue dark:from-brand-green via-blue-600 dark:via-brand-green/80',
       tags: ['Mango', '2.5Kg'],
     },
     {
@@ -67,16 +67,16 @@ const Products = () => {
   }
 
   return (
-    <section id="products" className="py-12 md:py-20 bg-gradient-to-b from-white to-brand-light">
+    <section id="products" className="py-12 md:py-20 bg-gradient-to-b from-white dark:from-gray-900 to-brand-light dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-12">
           <span className="inline-block bg-brand-red/10 text-brand-red font-bold tracking-widest uppercase text-xs px-3 md:px-4 py-1.5 md:py-2 rounded-full mb-3 md:mb-4">
             Our Product Line
           </span>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue mt-2 md:mt-3 mb-3 md:mb-4 px-4">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue dark:text-brand-green mt-2 md:mt-3 mb-3 md:mb-4 px-4">
             Our Product Line
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-sm md:text-base">
             Flavored instant drink powders and corn chips snacks manufactured locally in Somaliland, offering affordable, quality products that cater to everyday consumer needs.
           </p>
         </div>
@@ -127,7 +127,7 @@ const Products = () => {
 
 const ProductCard = ({ product, scrollToSection }) => {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group border border-gray-100 relative">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group border border-gray-100 dark:border-gray-700 relative">
       <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${product.borderColor} to-transparent`}></div>
       <div className="absolute top-3 right-3 z-20">
         <span className={`bg-gradient-to-r ${product.badgeColor} text-white text-[10px] font-black px-3 py-1.5 rounded-full shadow-lg uppercase tracking-wider`}>
@@ -143,15 +143,15 @@ const ProductCard = ({ product, scrollToSection }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       <div className="p-5">
-        <h3 className="text-lg font-bold text-brand-blue mb-2 group-hover:text-brand-red transition-colors">
+        <h3 className="text-lg font-bold text-brand-blue dark:text-brand-green mb-2 group-hover:text-brand-red transition-colors">
           {product.name}
         </h3>
-        <p className="text-gray-600 text-xs mb-3 leading-relaxed line-clamp-2">{product.description}</p>
+        <p className="text-gray-600 dark:text-gray-300 text-xs mb-3 leading-relaxed line-clamp-2">{product.description}</p>
         <div className="flex flex-wrap gap-1.5 mb-4">
           {product.tags.map((tag, index) => (
             <span
               key={index}
-              className="bg-blue-50 text-brand-blue text-[10px] font-semibold px-2.5 py-1 rounded-md"
+              className="bg-blue-50 dark:bg-brand-green/10 text-brand-blue dark:text-brand-green text-[10px] font-semibold px-2.5 py-1 rounded-md"
             >
               {tag}
             </span>
@@ -159,12 +159,12 @@ const ProductCard = ({ product, scrollToSection }) => {
         </div>
         <div className="flex justify-between items-center pt-3 border-t border-gray-100">
           <div>
-            <span className="text-lg font-extrabold text-brand-red">{product.price}</span>
+            <span className="text-lg font-extrabold text-brand-blue dark:text-brand-green">{product.price}</span>
             <span className="text-xs text-gray-400 ml-1">from</span>
           </div>
           <button
             onClick={() => scrollToSection('distribution')}
-            className="bg-brand-blue text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-brand-red hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+            className="bg-brand-blue dark:bg-brand-green text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-brand-green dark:hover:bg-brand-green/90 hover:shadow-lg transform hover:scale-105 transition-all duration-300"
           >
             Order
           </button>

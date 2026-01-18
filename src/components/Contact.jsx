@@ -15,11 +15,11 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-12 md:py-24 bg-white">
+    <section id="contact" className="py-12 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
           <span className="text-brand-red font-bold tracking-widest uppercase text-xs md:text-sm">Get In Touch</span>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue mt-2 md:mt-3 mb-4 md:mb-6 px-4">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue dark:text-brand-green mt-2 md:mt-3 mb-4 md:mb-6 px-4">
             Contact ZamZam Food Industry
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-base md:text-lg">
@@ -29,37 +29,37 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold text-brand-blue mb-6 md:mb-8">Contact Information</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-brand-blue dark:text-brand-green mb-6 md:mb-8">Contact Information</h3>
             <div className="space-y-6 md:space-y-8">
               <div className="flex items-start">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-lg md:text-xl shrink-0 mr-4 md:mr-5">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 dark:bg-brand-green/10 text-brand-blue dark:text-brand-green rounded-full flex items-center justify-center text-lg md:text-xl shrink-0 mr-4 md:mr-5">
                   <i className="fas fa-map-marker-alt"></i>
                 </div>
                 <div>
-                  <h4 className="text-lg md:text-xl font-bold text-brand-blue mb-2">Headquarters</h4>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                  <h4 className="text-lg md:text-xl font-bold text-brand-blue dark:text-brand-green mb-2">Headquarters</h4>
+                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                     ZamZam Food Industry<br />Hargeisa, Somaliland
                   </p>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-lg md:text-xl shrink-0 mr-4 md:mr-5">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 dark:bg-brand-green/10 text-brand-blue dark:text-brand-green rounded-full flex items-center justify-center text-lg md:text-xl shrink-0 mr-4 md:mr-5">
                   <i className="fas fa-phone-alt"></i>
                 </div>
                 <div>
-                  <h4 className="text-lg md:text-xl font-bold text-brand-blue mb-2">Business Inquiries</h4>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                  <h4 className="text-lg md:text-xl font-bold text-brand-blue dark:text-brand-green mb-2">Business Inquiries</h4>
+                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                     Contact us for distribution and partnership opportunities
                   </p>
                   <p className="text-xs md:text-sm text-gray-500">Available during business hours</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-lg md:text-xl shrink-0 mr-4 md:mr-5">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 dark:bg-brand-green/10 text-brand-blue dark:text-brand-green rounded-full flex items-center justify-center text-lg md:text-xl shrink-0 mr-4 md:mr-5">
                   <i className="fas fa-envelope"></i>
                 </div>
                 <div>
-                  <h4 className="text-lg md:text-xl font-bold text-brand-blue mb-2">General Inquiries</h4>
+                  <h4 className="text-lg md:text-xl font-bold text-brand-blue dark:text-brand-green mb-2">General Inquiries</h4>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed break-all">
                     Contact us through our Facebook page or distribution form
                   </p>
@@ -68,29 +68,29 @@ const Contact = () => {
               </div>
             </div>
 
-            <h4 className="text-lg md:text-xl font-bold text-brand-blue mt-8 md:mt-10 mb-3 md:mb-4">Connect on Social</h4>
+            <h4 className="text-lg md:text-xl font-bold text-brand-blue dark:text-brand-green mt-8 md:mt-10 mb-3 md:mb-4">Connect on Social</h4>
             <div className="flex gap-3 md:gap-4">
               <a
                 href="#"
-                className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 text-brand-blue rounded-full flex items-center justify-center text-base md:text-lg hover:bg-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-1"
+                className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 dark:bg-gray-800 text-brand-blue dark:text-brand-green rounded-full flex items-center justify-center text-base md:text-lg hover:bg-brand-blue dark:hover:bg-brand-green hover:text-white transition-all duration-300 hover:-translate-y-1"
               >
                 <i className="fab fa-linkedin-in"></i>
               </a>
               <a
                 href="#"
-                className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 text-brand-blue rounded-full flex items-center justify-center text-base md:text-lg hover:bg-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-1"
+                className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 dark:bg-gray-800 text-brand-blue dark:text-brand-green rounded-full flex items-center justify-center text-base md:text-lg hover:bg-brand-blue dark:hover:bg-brand-green hover:text-white transition-all duration-300 hover:-translate-y-1"
               >
                 <i className="fab fa-twitter"></i>
               </a>
               <a
                 href="#"
-                className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 text-brand-blue rounded-full flex items-center justify-center text-base md:text-lg hover:bg-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-1"
+                className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 dark:bg-gray-800 text-brand-blue dark:text-brand-green rounded-full flex items-center justify-center text-base md:text-lg hover:bg-brand-blue dark:hover:bg-brand-green hover:text-white transition-all duration-300 hover:-translate-y-1"
               >
                 <i className="fab fa-instagram"></i>
               </a>
               <a
                 href="#"
-                className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 text-brand-blue rounded-full flex items-center justify-center text-base md:text-lg hover:bg-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-1"
+                className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 dark:bg-gray-800 text-brand-blue dark:text-brand-green rounded-full flex items-center justify-center text-base md:text-lg hover:bg-brand-blue dark:hover:bg-brand-green hover:text-white transition-all duration-300 hover:-translate-y-1"
               >
                 <i className="fab fa-youtube"></i>
               </a>
