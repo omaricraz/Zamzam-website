@@ -38,7 +38,7 @@ const About = () => {
           <div className="relative mt-8 lg:mt-0">
             <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-br from-brand-blue/20 to-brand-red/20 rounded-2xl md:rounded-3xl transform rotate-3"></div>
             <img
-              src="/images/chips-with plate.png"
+              src="/images/Chips3.jpeg"
               alt="ZamZam Group Chip Production Line"
               className="relative rounded-xl md:rounded-2xl shadow-2xl w-full border-2 md:border-4 border-white"
             />

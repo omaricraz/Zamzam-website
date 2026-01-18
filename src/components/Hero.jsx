@@ -7,9 +7,9 @@ import 'swiper/css/effect-coverflow'
 
 const Hero = () => {
   const heroImages = [
-    { src: '/images/chips.png', alt: 'Chips' },
+    { src: '/images/litgirlchips.jpg', alt: 'Chips' },
+    { src: '/images/complshot.jpeg', alt: 'Complete SHot' },
     { src: '/images/milk.png', alt: 'Milk' },
-    { src: '/images/mango.png', alt: 'Mango' },
   ]
 
   const scrollToSection = (id) => {
